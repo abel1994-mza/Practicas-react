@@ -1,0 +1,59 @@
+{
+  "notes": [
+    {
+      "id": "1",
+      "content": "Aprender React",
+      "important": true
+    },
+    {
+      "id": "2",
+      "content": "Matematicas",
+      "important": false
+    },
+    {
+      "id": "3",
+      "content": "Hacer la cama",
+      "important": true
+    },
+    {
+      "id": "3",
+      "content": "matematicas",
+      "important": true
+    },
+    {
+      "id": "0807",
+      "content": "matematica",
+      "important": false
+    },
+    {
+      "id": "203868",
+      "content": "lengua",
+      "important": true
+    },
+    {
+      "id": "833945",
+      "content": "Historia",
+      "important": false
+    },
+    {
+      "id": "722134",
+      "content": "Filosofia",
+      "important": false
+    },
+    {
+      "id": "790925",
+      "content": "fisica",
+      "important": true
+    },
+    {
+      "id": 324219,
+      "content": "abel",
+      "important": false
+    },
+    {
+      "id": 893271,
+      "content": "Eva",
+      "important": true
+    }
+  ]
+}

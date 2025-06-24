@@ -1,8 +1,11 @@
-const Note = ({ note }) => {
+const Note = ({ note, toggleImportance }) => {
+  const label = note.important ? "Importante" : "No importante";
+
   return (
     <>
-      <li>
-        Nombre: {note.name}/ Telefono: {note.telefono}/ Ciudad: {note.city}
+      <li className="note">
+        {note.content} {"  "}
+        <button onClick={toggleImportance}>{label}</button>
       </li>
     </>
   );
