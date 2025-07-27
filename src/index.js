@@ -1,10 +1,16 @@
 import express from "express";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const _filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(_filename);
 
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(express.static());
+app.use(express.static("dist"));
+
 let notes = [
   {
     id: 1,
@@ -28,13 +34,14 @@ let notes = [
   },
 ];
 //Ruta principal
-app.get("/", (request, response) => {
-  response.send("<h1> Hola mundo</h1>");
-});
+// app.get("/", (request, response) => {
+//   response.send("<h1> Hola mundo</h1>");
+// });
 //Ruta que devuelve el array de Notes
 app.get("/api/notes", (request, response) => {
   response.json(notes);
 });
+
 // Funcion para traer un solo recurso de notes
 app.get("/api/notes/:id", (request, response) => {
   const id = Number(request.params.id);
@@ -66,6 +73,10 @@ app.post("/api/notes", (request, response) => {
   };
   notes = notes.concat(note);
   response.json(note);
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 });
 
 const PORT = process.env.PORT || 3002;
