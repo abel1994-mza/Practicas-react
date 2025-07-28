@@ -9,7 +9,7 @@ const __dirname = path.dirname(_filename);
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(express.static("dist"));
+//app.use(express.static(path.join(__dirname, "src", "dist")));
 
 let notes = [
   {
@@ -34,9 +34,9 @@ let notes = [
   },
 ];
 //Ruta principal
-// app.get("/", (request, response) => {
-//   response.send("<h1> Hola mundo</h1>");
-// });
+app.get("/", (request, response) => {
+  response.send("<h1> Hola mundo</h1>");
+});
 //Ruta que devuelve el array de Notes
 app.get("/api/notes", (request, response) => {
   response.json(notes);
@@ -75,9 +75,9 @@ app.post("/api/notes", (request, response) => {
   response.json(note);
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
-});
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "src", "dist", "index.html"));
+// });
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
