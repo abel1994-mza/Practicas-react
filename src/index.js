@@ -39,9 +39,9 @@ let notes = [
   },
 ];
 //Ruta principal
-app.get("/", (request, response) => {
-  response.send("<h1> Hola mundo</h1>");
-});
+// app.get("/", (request, response) => {
+// response.send("<h1> Hola mundo</h1>");
+// });
 //Ruta que devuelve el array de Notes
 app.get("/api/notes", (request, response) => {
   response.json(notes);
