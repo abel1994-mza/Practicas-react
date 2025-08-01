@@ -14,7 +14,7 @@ console.log("__dirname:", __dirname);
 console.log("Ruta estática:", path.join(__dirname, "dist"));
 
 //app.use(express.static(path.join(__dirname, "src", "dist")));
-app.use(express.static(path.join(__dirname, "dist")));
+app.use(express.static(path.join(__dirname, "..", "dist")));
 
 let notes = [
   {
@@ -84,7 +84,7 @@ app.post("/api/notes", (request, response) => {
 //   res.sendFile(path.resolve(__dirname, "src", "dist", "index.html"));
 // });
 app.get(/^\/(?!api).*/, (req, res) => {
-  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+  res.sendFile(path.resolve(__dirname, "..", "dist", "index.html"));
 });
 
 const PORT = process.env.PORT || 3002;
