@@ -6,6 +6,6 @@ const filters = (persons, buscar) => {
   );
 };
 
-const resultado = filters(persons, "Ab");
+const resultado = filters(persons, "Abs");
 
 console.log(resultado);
